@@ -23,8 +23,10 @@
     "graphql": "^17.0.2",
     "graphql-tag": "^2.12.7",
     "nuxt": "^4.5.2",
+    "nuxt-charts": "^3.1.0",
     "pinia": "^4.0.3",
     "tailwindcss": "^4.3.3",
+    "vccs": "^0.6.0",
     "vue": "^3.5.43",
     "vue-router": "^5.3.1"
   },

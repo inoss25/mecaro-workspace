@@ -24,6 +24,7 @@ export default defineNuxtConfig({
         '@nuxtjs/i18n',
         '@nuxt/fonts',
         '@sidebase/nuxt-auth',
+        'nuxt-charts'
     ],
 
     auth: {
