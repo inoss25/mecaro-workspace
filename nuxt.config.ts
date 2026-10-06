@@ -1,5 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { createRequire } from 'node:module'
+import { fileURLToPath } from 'node:url'
 import tailwindcss from '@tailwindcss/vite'
+
+const require = createRequire(fileURLToPath(new URL('./node_modules/vccs/package.json', import.meta.url)))
+const decimalLight = require.resolve('decimal.js-light/decimal.mjs')
 
 export default defineNuxtConfig({
     compatibilityDate: '2025-07-15',
@@ -99,5 +104,11 @@ export default defineNuxtConfig({
 
     vite: {
         plugins: [tailwindcss()],
+        resolve: {
+            alias: {
+                // vccs imports the CJS browser build, which Vite cannot load as a default export.
+                'decimal.js-light': decimalLight,
+            },
+        },
     },
 })
